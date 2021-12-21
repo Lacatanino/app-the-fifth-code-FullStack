@@ -48,10 +48,10 @@ const {ApolloServer} = require('apollo-server-express')
 const iniciarServidor =async()=>{
     const api = express();
     //Se sirve react build como archivo estatico
-    api.use(express.static(path.join(__dirname, "/app-the-fifth-code-Frontend/ciclo4_frontend/", "build")));
+    api.use(express.static(path.join(__dirname, "/frontend/", "build")));
     api.use(express.static("public"));
     api.get('/*', function (req, res) {
-        res.sendFile(path.join(__dirname, 'app-the-fifth-code-Frontend/ciclo4_frontend/build', 'index.html'));
+        res.sendFile(path.join(__dirname, 'frontend/build/', 'index.html'));
     });
     //
     const apollo= new ApolloServer(
